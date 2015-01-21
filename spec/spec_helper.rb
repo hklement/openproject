@@ -87,6 +87,14 @@ RSpec.configure do |config|
                                end
 
     DatabaseCleaner.start
+
+    acc = Multitenancy::Account.new owner: 'public',
+                                    domain: 'example.org',
+                                    namespace: 'public'
+    acc.save validate: false
+
+    allow(OpenProject::OmniAuth::Authorization).to receive(:callbacks).and_return([])
+    allow(OpenProject::OmniAuth::Authorization).to receive(:after_login_callbacks).and_return([])
   end
 
   config.after(:each) do
