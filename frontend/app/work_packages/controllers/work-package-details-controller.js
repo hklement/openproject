@@ -113,6 +113,8 @@ module.exports = function($scope,
     // watchers
     $scope.watchers = workPackage.embedded.watchers;
 
+    $scope.showErbPagePath = PathHelper.staticWorkPackagePath($scope.workPackage.props.id);
+
     // Author
     $scope.author = workPackage.embedded.author;
     $scope.authorPath = PathHelper.staticUserPath($scope.author.props.id);

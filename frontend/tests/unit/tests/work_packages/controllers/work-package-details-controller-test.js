@@ -180,5 +180,9 @@ describe('WorkPackageDetailsController', function() {
     });
   });
 
-
+  describe('showErbPagePath', function() {
+    it('points to old show page', function() {
+      expect(scope.showErbPagePath).to.eql('/work_packages/99');
+    });
+  });
 });
